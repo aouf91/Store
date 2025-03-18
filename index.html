@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق ويب تيليجرام</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>مرحبًا بك في تطبيق ويب تيليجرام!</h1>
+    <p>يمكنك إرسال رسالة إلى البوت من هنا.</p>
+    <button id="sendMessage">إرسال رسالة إلى البوت</button>
+
+    <script>
+        let tg = window.Telegram.WebApp; 
+        tg.expand(); // توسيع التطبيق ليملأ الشاشة
+        
+        document.getElementById("sendMessage").addEventListener("click", function () {
+            tg.sendData("مرحبا، لقد ضغطت على الزر!");
+        });
+    </script>
+</body>
+</html>
